@@ -1,0 +1,35 @@
+test:
+    name: ChainCode benchmark
+    description: test benchmark
+    workers: #This section defines the number of worker instances that will run the test. Workers are typically processes that simulate clients interacting with the blockchain.
+      number: 1
+    rounds: #Each round can represent a distinct test case or set of operations performed.
+      - label: CreateAsset
+        description: CreateAsset
+        txDuration: 1 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        concurrency: 1
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts:
+            tps: 1
+           #This section provides options for the rateControl type defined above.
+            transactionLoad: 1
+            delay: 5
+        workload:
+          module: './workload/CreateAsset.js'
+          arguments:
+           organizations:
+              - name: Org1
+                contractId: basic
+                assets: 10
+              - name: Org2
+                contractId: basic
+                assets: 15
+              - name: Org3
+                contractId: basic
+                assets: 20
+
+#assets: 1 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+		
+            #contractId: basic
+

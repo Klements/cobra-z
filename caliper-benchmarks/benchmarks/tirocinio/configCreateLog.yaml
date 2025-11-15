@@ -1,0 +1,25 @@
+test:
+  workers:
+    number: 5
+  rounds:
+    - label: createLog
+      txNumber: 30000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 120
+      workload:
+        module: benchmarks/tirocinio/createLog.js
+    - label: riskAssessment
+      txNumber: 5000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 150
+      workload:
+        module: benchmarks/tirocinio/riskAssessment.js
+  monitor:
+    type: system
+    interval: 1 # Frequenza di campionamento (in secondi)
+
+    

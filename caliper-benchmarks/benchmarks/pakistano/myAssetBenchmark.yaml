@@ -1,0 +1,156 @@
+test:
+    name: ChainCode benchmark
+    description: test benchmark
+    workers: #This section defines the number of worker instances that will run the test. Workers are typically processes that simulate clients interacting with the blockchain.
+      number: 1
+      type: local
+    rounds: #Each round can represent a distinct test case or set of operations performed.
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 100
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 1000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 100
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 2000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 100
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 3000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 100
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 4000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+            
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 150
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 10000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 200
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 20000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 250
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 30000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 300
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 40000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic      
+            
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 350
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 10000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 400
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 20000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 450
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 30000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
+      - label: OverallRiskCalculation
+        description: OverallRiskCalculation
+        txDuration: 60 #This indicates the duration of the transactions for this round. Here, it is set to 30 seconds, meaning that the Risk Calculation operations will run for 30 seconds
+        rateControl: #This section defines how the rate of transactions will be controlled during the benchmarking. It can help simulate different loads on the network.
+          type: fixed-load #This specifies the method of rate control. fixed-load means that a constant number of transactions will be sent per second during the test.
+          opts: #This section provides options for the rateControl type defined above.
+            transactionLoad: 500
+        workload:
+          module: workload/CalculateOverallRisk.js
+          arguments:
+            assets: 40000 #This indicates the number of assets that will be involved in the read operations during this round. Here, it is set to XXX, meaning the workload will attempt to read data for XXX different assets.
+            contractId: basic
